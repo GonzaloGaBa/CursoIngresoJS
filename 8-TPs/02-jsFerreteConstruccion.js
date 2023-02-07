@@ -14,7 +14,7 @@ function Rectangulo ()
     ancho = parseFloat(document.getElementById("txtIdAncho").value)
     largo = parseFloat(document.getElementById("txtIdLargo").value)
 
-    perimetro = (ancho + largo) * 2
+    alambre = (ancho + largo) * 2
 
     alambre = perimetro * 3
 
@@ -25,17 +25,12 @@ function Circulo ()
 {
     let radio;
     let alambre;
-    const PI = 3.14;
-    let perimetro;
+    
+    radio = parseFloat(document.getElementById("txtIdRadio").value);
 
-    radio = parseFloat(document.getElementById("txtIdRadio").value)
+    alambre = Math.PI * radio * 2 * 3;
 
-    perimetro = 2 * PI * radio
-    alambre = perimetro * 3
-
-    alambre = alambre.toFixed(3)
-
-    alert(`Para los 3 hilos de alambre se van a precisar ${alambre}m.`)
+    alert(`Para los 3 hilos de alambre se van a precisar ${alambre.toFixed(2)}m.`)
 }
 function Materiales () 
 {
@@ -52,6 +47,6 @@ function Materiales ()
     cemento = area * 2; 
     cal = area * 3;
 
-    alert(`En un contrapiso de ${area}m se va a necesitar ${cemento} bolsas de cemento y ${cal} bolsas de cal.`)
+    alert(`En un contrapiso de ${area.toFixed(2)}m se va a necesitar ${cemento.toFixed(2)} bolsas de cemento y ${cal.toFixed(2)} bolsas de cal.`)
 
 }

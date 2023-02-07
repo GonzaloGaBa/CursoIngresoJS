@@ -1,12 +1,8 @@
 //Gonzalo Barrientos- Div X
+function mostrar() {
+  let numero;
 
-function mostrar()
-{
-	let numero
+  numero = Math.floor(Math.random() * 11);
 
-	numero = Math.floor(Math.random( ) * 11);
-
-	alert(numero)
-	  
-
+  alert(numero);
 }//FIN DE LA FUNCIÓN

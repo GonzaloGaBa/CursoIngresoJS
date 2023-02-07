@@ -11,9 +11,7 @@ function FahrenheitCentigrados ()
 
     centígrados = (fahrenheit - 32) / 1.8;
 
-    centígrados = centígrados.toFixed(2);
-
-    alert(`${fahrenheit} grados centigrados son ${centígrados} grados Fahrenheit`);
+    alert(`${fahrenheit.toFixed(2)} grados celsius son ${centígrados.toFixed(2)} grados Fahrenheit`);
 }
 
 function CentigradosFahrenheit () 
@@ -25,7 +23,5 @@ function CentigradosFahrenheit ()
 
     fahrenheit = (centígrados * 1.8) + 32;
 
-    fahrenheit = fahrenheit.toFixed(2);
-
-    alert(`${centígrados} grados centigrados son ${fahrenheit} grados Fahrenheit`);
+    alert(`${centígrados.toFixed(2)} grados celsius son ${fahrenheit.toFixed(2)} grados Fahrenheit`);
 }

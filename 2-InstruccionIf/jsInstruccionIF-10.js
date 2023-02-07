@@ -1,21 +1,24 @@
-function mostrar()
-{
-	//Genero el número RANDOM entre 1 y 10 
-	let numeroAleatorio
+//Gonzalo Barrientos - Div X
 
-	numeroAleatorio = Math.floor(Math.random( ) * 11);
+function mostrar() {
+  //Genero el número RANDOM entre 1 y 10
+  let numeroAleatorio;
 
-	if (numeroAleatorio == 9 || numeroAleatorio == 10) {
-		alert("EXCELENTE")
-	}
+  numeroAleatorio = Math.floor(Math.random() * 11);
+
+  if(numeroAleatorio >= 9) 
+  {
+    alert(`Su nota es un ${numeroAleatorio} \n "EXCELENTE"`);
+  } 
+  else 
+  {
+    if(numeroAleatorio >= 4) 
+	{
+      alert(`Su nota es un ${numeroAleatorio} \n "APROBO"`);
+    } 
 	else 
 	{
-		if(numeroAleatorio >= 4 && numeroAleatorio <= 8 ){
-			alert("APROBÓ" )	
-		} else {
-			alert("Vamos, la proxima se puede")
-		}
-	}
-	
-
-}//FIN DE LA FUNCIÓN
+      alert(`Su nota es un ${numeroAleatorio} \n"Vamos, la proxima se puede"`);
+    }
+  }
+} //FIN DE LA FUNCIÓN
