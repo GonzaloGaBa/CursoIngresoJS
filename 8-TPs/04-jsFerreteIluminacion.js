@@ -13,53 +13,66 @@ function CalcularPrecio() {
   const VALORXUNIDAD = 35;
   let precioFinal;
   let marca;
+  let impuesto;
 
   cantLamparas = parseInt(document.getElementById("txtIdCantidad").value);
   precioFinal = document.getElementById("txtIdprecioDescuento").value;
   marca = document.getElementById("Marca").value;
 
   //Punto A
-  if (cantLamparas >= 6) {
+  if(cantLamparas >= 6) 
+  {
     precioFinal = cantLamparas * VALORXUNIDAD * 0.5;
   }
 
   //Punto B
-  if (cantLamparas == 5 && marca == "ArgentinaLuz") {
+  if(cantLamparas == 5 && marca == "ArgentinaLuz") 
+  {
     precioFinal = cantLamparas * VALORXUNIDAD * 0.4;
-  } else {
-    if (cantLamparas == 5 && marca != "ArgentinaLuz") {
+  } 
+  else 
+  {
+    if(cantLamparas == 5 && marca != "ArgentinaLuz") 
+    {
       precioFinal = cantLamparas * VALORXUNIDAD * 0.3;
     }
   }
 
   //Punto C
-  if (
-    cantLamparas == 4 &&
-    (marca == "ArgentinaLuz" || marca == "FelipeLamparas")
-  ) {
+  if(cantLamparas == 4 && (marca == "ArgentinaLuz" || marca == "FelipeLamparas")) 
+  {
     precioFinal = cantLamparas * VALORXUNIDAD * 0.25;
-  } else {
-    if (
-      cantLamparas == 4 &&
-      !(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
-    ) {
+  } 
+  else 
+  {
+    if(cantLamparas == 4 && !(marca == "ArgentinaLuz" || marca == "FelipeLamparas")) 
+    {
       precioFinal = cantLamparas * VALORXUNIDAD * 0.2;
     }
   }
 
   //Punto D
-  if (cantLamparas == 3 && marca == "ArgentinaLuz") {
+  if(cantLamparas == 3 && marca == "ArgentinaLuz") 
+  {
     precioFinal = cantLamparas * VALORXUNIDAD * 0.15;
-  } else {
-    if (cantLamparas == 3 && marca == "FelipeLamparas") {
+  } 
+  else 
+  {
+    if(cantLamparas == 3 && marca == "FelipeLamparas") 
+    {
       precioFinal = cantLamparas * VALORXUNIDAD * 0.1;
     }
-    if (
-      cantLamparas == 3 &&
-      !(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
-    ) {
+    if(cantLamparas == 3 && !(marca == "ArgentinaLuz" || marca == "FelipeLamparas"))
+    {
       precioFinal = cantLamparas * VALORXUNIDAD * 0.05;
     }
+  }
+
+  //Punto D
+  if(precioFinal >= 120)
+  {
+    precioFinal = cantLamparas * VALORXUNIDAD / 0.1;
+    alert(`Usted pago ${precioFinal} de IIBB.`)
   }
 
   document.getElementById("txtIdprecioDescuento").value = precioFinal;
