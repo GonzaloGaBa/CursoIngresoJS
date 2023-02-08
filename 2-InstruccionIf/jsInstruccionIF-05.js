@@ -1,14 +1,11 @@
 //Gonzalo Barrientos- Div X
 
-function mostrar()
-{
-	let edad;
+function mostrar() {
+  let edad;
 
-	edad = parseInt(document.getElementById("txtIdEdad").value);
+  edad = parseInt(document.getElementById("txtIdEdad").value);
 
-	if ( edad <= 13 || edad >= 18 )
-	{
-		alert("El usuario no es adolcente");
-	}
-
-}//FIN DE LA FUNCIÓN
+  if (edad <= 13 || edad >= 18) {
+    alert("El usuario no es adolcente");
+  }
+} //FIN DE LA FUNCIÓN

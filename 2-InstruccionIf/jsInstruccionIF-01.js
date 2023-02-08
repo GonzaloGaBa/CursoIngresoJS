@@ -1,17 +1,12 @@
 //Gonzalo Barrientos-Div X
 
+function mostrar() {
+  //tomo la edad
+  let edad;
 
-function mostrar()
-{
-	//tomo la edad  
-	let edad;
+  edad = parseInt(document.getElementById("txtIdEdad").value);
 
-	edad = parseInt(document.getElementById("txtIdEdad").value);
-
-	if ( edad == 15 )
-	{
-		alert("Niña Bonita");
-	}
-
-
-}//FIN DE LA FUNCIÓN
+  if (edad == 15) {
+    alert("Niña Bonita");
+  }
+} //FIN DE LA FUNCIÓN
