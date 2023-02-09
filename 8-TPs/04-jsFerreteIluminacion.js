@@ -68,7 +68,7 @@ function CalcularPrecio() {
     }
   }
 
-  //Punto D
+  //Punto E
   if(precioFinal >= 120)
   {
     precioFinal = cantLamparas * VALORXUNIDAD / 0.1;
