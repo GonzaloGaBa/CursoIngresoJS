@@ -7,13 +7,11 @@ D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es de
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
   Gonzalo Barrientos- Div X*/
-
 function CalcularPrecio() {
   let cantLamparas;
   const VALORXUNIDAD = 35;
   let precioFinal;
   let marca;
-  
 
   cantLamparas = parseInt(document.getElementById("txtIdCantidad").value);
   precioFinal = document.getElementById("txtIdprecioDescuento").value;
@@ -24,56 +22,60 @@ function CalcularPrecio() {
   {
     precioFinal = cantLamparas * VALORXUNIDAD * 0.5;
   }
-
-  //Punto B
-  if(cantLamparas == 5 && marca == "ArgentinaLuz") 
-  {
-    precioFinal = cantLamparas * VALORXUNIDAD * 0.4;
-  } 
-  else 
-  {
-    if(cantLamparas == 5 && marca != "ArgentinaLuz") 
+  else
+  {//Punto B
+    if(cantLamparas == 5 && marca == "ArgentinaLuz") 
     {
-      precioFinal = cantLamparas * VALORXUNIDAD * 0.3;
+      precioFinal = cantLamparas * VALORXUNIDAD * 0.4;
+    } 
+    else 
+    {
+      if(cantLamparas == 5 && marca != "ArgentinaLuz") 
+      {
+        precioFinal = cantLamparas * VALORXUNIDAD * 0.3;
+      }
+      else
+      {//Punto C
+        if(cantLamparas == 4 && (marca == "ArgentinaLuz" || marca == "FelipeLamparas")) 
+        {
+          precioFinal = cantLamparas * VALORXUNIDAD * 0.25;
+        } 
+        else 
+        {
+          if(cantLamparas == 4 && !(marca == "ArgentinaLuz" || marca == "FelipeLamparas")) 
+          {
+            precioFinal = cantLamparas * VALORXUNIDAD * 0.2;
+          }
+          else
+          {//Punto D
+            if(cantLamparas == 3 && marca == "ArgentinaLuz") 
+            {
+              precioFinal = cantLamparas * VALORXUNIDAD * 0.15;
+            } 
+            else 
+            {
+              if(cantLamparas == 3 && marca == "FelipeLamparas") 
+              {
+                precioFinal = cantLamparas * VALORXUNIDAD * 0.1;
+              }
+              if(cantLamparas == 3 && !(marca == "ArgentinaLuz" || marca == "FelipeLamparas"))
+              {
+                precioFinal = cantLamparas * VALORXUNIDAD * 0.05;
+              }
+              else
+              {
+                if(precioFinal >= 120)
+                {
+                  precioFinal = cantLamparas * VALORXUNIDAD / 0.1;
+                  alert(`Usted pago ${precioFinal} de IIBB.`)
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
-
-  //Punto C
-  if(cantLamparas == 4 && (marca == "ArgentinaLuz" || marca == "FelipeLamparas")) 
-  {
-    precioFinal = cantLamparas * VALORXUNIDAD * 0.25;
-  } 
-  else 
-  {
-    if(cantLamparas == 4 && !(marca == "ArgentinaLuz" || marca == "FelipeLamparas")) 
-    {
-      precioFinal = cantLamparas * VALORXUNIDAD * 0.2;
-    }
-  }
-
-  //Punto D
-  if(cantLamparas == 3 && marca == "ArgentinaLuz") 
-  {
-    precioFinal = cantLamparas * VALORXUNIDAD * 0.15;
-  } 
-  else 
-  {
-    if(cantLamparas == 3 && marca == "FelipeLamparas") 
-    {
-      precioFinal = cantLamparas * VALORXUNIDAD * 0.1;
-    }
-    if(cantLamparas == 3 && !(marca == "ArgentinaLuz" || marca == "FelipeLamparas"))
-    {
-      precioFinal = cantLamparas * VALORXUNIDAD * 0.05;
-    }
-  }
-
-  //Punto E
-  if(precioFinal >= 120)
-  {
-    precioFinal = cantLamparas * VALORXUNIDAD / 0.1;
-    alert(`Usted pago ${precioFinal} de IIBB.`)
-  }
-
   document.getElementById("txtIdprecioDescuento").value = precioFinal;
 }
+
