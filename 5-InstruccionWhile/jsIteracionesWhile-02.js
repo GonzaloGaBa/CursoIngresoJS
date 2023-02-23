@@ -4,9 +4,11 @@ con números DESCENDENTES, desde el 10 al 1.*/
 function mostrar()
 {
 	let i;
-	i = 10
-	while (i >= 1) {
-		alert(`Número: ${i}`);
-		i = i - 1;
+	
+	i = 10;
+
+	while (i > 0) {
+		alert(i);
+		i--;
 	}
 }//FIN DE LA FUNCIÓN

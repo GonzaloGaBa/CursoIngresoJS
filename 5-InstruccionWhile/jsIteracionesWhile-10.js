@@ -13,17 +13,49 @@ hasta que el usuario quiera, mostrar:
 function mostrar()
 {
 	//declarar contadores y variables 
-	var respuesta;
-	var numeroIngresado;
-	var sumaNegativos=0;
-
+	let respuesta;
+	let numeroIngresado;
+	let sumaNegativos=0;
+	let sumaPositivos=0;
+	let acumuladorPositivos=0;
+	let acumuladorNegativos=0;
+	let cantidadCeros=0;
+	let cantidadPares=0;
 	respuesta="si";
-
+	
 	while(respuesta=="si")
 	{
-		
-		respuesta=prompt("desea continuar?");
+		numeroIngresado = parseInt(prompt("Ingrese un numero"));
+		if (numeroIngresado > 0) {
+			sumaPositivos += numeroIngresado;
+			acumuladorPositivos++;
+		} 
+		else if (numeroIngresado < 0)
+		{
+			sumaNegativos += numeroIngresado;
+			acumuladorNegativos++
+		}
+		else if (numeroIngresado % 2 === 0)
+		{
+			cantidadPares++
+		}
+		else 
+		{
+			cantidadCeros++
+		}
+
+		respuesta=prompt("¿Desea continuar? \n 'si' /'no'");
 	}//fin del while
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+	document.write("1) La suma de positivos es : "+sumaPositivos);
+	document.write("<br>");
+	document.write("2) La suma de negativos es : "+sumaNegativos);
+	document.write("<br>");
+	document.write("3) Hay " + acumuladorPositivos + " de numeros positivos.");
+	document.write("<br>");
+	document.write("4) Hay " + acumuladorNegativos + " de numeros negativos.");
+	document.write("<br>");
+	document.write("5) Hay un total de " + cantidadCeros + " ceros.");
+	document.write("<br>");
+	document.write("6) Hay un total de " + cantidadPares + " numeros pares.");
 }//FIN DE LA FUNCIÓN
